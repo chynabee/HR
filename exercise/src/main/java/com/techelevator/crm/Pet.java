@@ -10,9 +10,22 @@ public class Pet {
     private ArrayList<String> vaccinations = new ArrayList<String>();
 
     //Constructor
-    public String Pet(String name, String species){
+    public String Pet(String name, String species) {
         this.name = name;
         this.species = species;
+    }
+
+    //Method
+    public String listVaccinations() {
+        String output = "";
+        for (String vax : vaccinations) {
+            output += vax + ", ";
+        }
+
+        if (output.length() > 2) {
+            output = output.substring(0, output.length() - 2);
+        }
+        return output;
     }
 
     public String getName() {
@@ -38,8 +51,23 @@ public class Pet {
     public void setVaccinations(ArrayList<String> vaccinations) {
         this.vaccinations = vaccinations;
     }
-
-    //Method
-    public String
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
