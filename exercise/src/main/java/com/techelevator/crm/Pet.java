@@ -2,19 +2,16 @@ package com.techelevator.crm;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Pet {
 
+    // Instance Variable
     private String name;
     private String species;
-    private ArrayList<String> vaccinations = new ArrayList<String>();
+    private List<String> vaccinations = new ArrayList<>();
 
-    //Constructor
-    public String Pet(String name, String species){
-        this.name = name;
-        this.species = species;
-    }
-
+    // Getters and Setters
     public String getName() {
         return name;
     }
@@ -31,15 +28,32 @@ public class Pet {
         this.species = species;
     }
 
-    public ArrayList<String> getVaccinations() {
+    public List<String> getVaccinations() {
         return vaccinations;
     }
 
-    public void setVaccinations(ArrayList<String> vaccinations) {
+    public void setVaccinations(List<String> vaccinations) {
         this.vaccinations = vaccinations;
     }
 
-    //Method
-    public String
+    // Constructor
+    public Pet(String name, String species) {
+        this.name = name;
+        this.species = species;
+    }
+
+    // Method
+    public String listVaccinations() {
+        String output = "";
+        for (String vax : vaccinations) {
+            output += vax + ", ";
+        }
+
+        if (output.length() > 2) { //strip the trailing comma off if there is one (i.e. if the list is not empty)
+            output = output.substring(0, output.length() - 2);
+        }
+
+        return output;
+    }
 
 }
